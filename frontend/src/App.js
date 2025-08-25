@@ -15,7 +15,7 @@ function App() {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.get(`http://localhost:3000/users/${username}/repos`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/data`);
       setRepos(response.data);
       setCurrentPage(1);
     } catch (err) {
